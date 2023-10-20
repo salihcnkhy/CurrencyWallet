@@ -1,0 +1,767 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A3791AB2ADD24DE0057FAE6 /* WalletModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3791A02ADD24DE0057FAE6 /* WalletModule.framework */; };
+		4A3791B02ADD24DE0057FAE6 /* WalletModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791AF2ADD24DE0057FAE6 /* WalletModuleTests.swift */; };
+		4A3791B12ADD24DE0057FAE6 /* WalletModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A3791A32ADD24DE0057FAE6 /* WalletModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A3791C02ADD25130057FAE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791BF2ADD25130057FAE6 /* HomeView.swift */; };
+		4A3791C22ADD252A0057FAE6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791C12ADD252A0057FAE6 /* HomeViewModel.swift */; };
+		4A3791C62ADD266F0057FAE6 /* UserInformationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791C52ADD266F0057FAE6 /* UserInformationHeaderView.swift */; };
+		4A3791C92ADD2C160057FAE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A3791C82ADD2C160057FAE6 /* Assets.xcassets */; };
+		4A3791CB2ADD2C250057FAE6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4A3791CA2ADD2C250057FAE6 /* Localizable.xcstrings */; };
+		4A3791CD2ADD57610057FAE6 /* CurrencyRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791CC2ADD57610057FAE6 /* CurrencyRowView.swift */; };
+		4A3791CF2ADD5D360057FAE6 /* CurrencyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791CE2ADD5D360057FAE6 /* CurrencyListView.swift */; };
+		4A3791D22ADD5DFC0057FAE6 /* RoundedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791D12ADD5DFC0057FAE6 /* RoundedButtonView.swift */; };
+		4A3791E62ADD77E80057FAE6 /* BuyCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791E52ADD77E80057FAE6 /* BuyCurrencyView.swift */; };
+		4A3791F82ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3791F72ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift */; };
+		4A8B6BA72ADE698400FDEA57 /* Bundle+WalletModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BA62ADE698400FDEA57 /* Bundle+WalletModule.swift */; };
+		4A8B6BAA2ADE6B0900FDEA57 /* LocalizedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BA92ADE6B0900FDEA57 /* LocalizedKeys.swift */; };
+		4A8B6BAC2ADE6B8C00FDEA57 /* LocalizedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BAB2ADE6B8C00FDEA57 /* LocalizedText.swift */; };
+		4A8B6BAE2ADE740800FDEA57 /* TitledCurrencyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BAD2ADE740800FDEA57 /* TitledCurrencyTextField.swift */; };
+		4A8B6BB02ADE804C00FDEA57 /* CurrencyTrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BAF2ADE804C00FDEA57 /* CurrencyTrendView.swift */; };
+		4A8B6BB22ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BB12ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift */; };
+		4A8B6BC32ADFA5C400FDEA57 /* CommonTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BC22ADFA5C400FDEA57 /* CommonTypealias.swift */; };
+		4A8B6BC52ADFA5EA00FDEA57 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6BC42ADFA5EA00FDEA57 /* HomeRoute.swift */; };
+		4A8B6C102AE0313E00FDEA57 /* GetCurrenciesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C0F2AE0313E00FDEA57 /* GetCurrenciesUseCase.swift */; };
+		4A8B6C122AE0314B00FDEA57 /* GetUserInformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C112AE0314B00FDEA57 /* GetUserInformationUseCase.swift */; };
+		4A8B6C152AE0316A00FDEA57 /* WalletRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C142AE0316A00FDEA57 /* WalletRepository.swift */; };
+		4A8B6C1B2AE031B200FDEA57 /* CurrencyRemoteAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C1A2AE031B200FDEA57 /* CurrencyRemoteAdapterProtocol.swift */; };
+		4A8B6C1D2AE0324000FDEA57 /* CurrencyListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C1C2AE0324000FDEA57 /* CurrencyListDTO.swift */; };
+		4A8B6C1F2AE0324700FDEA57 /* CurrencyItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C1E2AE0324700FDEA57 /* CurrencyItemDTO.swift */; };
+		4A8B6C272AE03B1C00FDEA57 /* GetCurrenciesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C262AE03B1C00FDEA57 /* GetCurrenciesResponse.swift */; };
+		4A8B6C2D2AE1596600FDEA57 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C2C2AE1596600FDEA57 /* WalletView.swift */; };
+		4A8B6C2F2AE16F9900FDEA57 /* BalanceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C2E2AE16F9900FDEA57 /* BalanceTextView.swift */; };
+		4A8B6C312AE172B000FDEA57 /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C302AE172B000FDEA57 /* UserDTO.swift */; };
+		4A8B6C332AE1731100FDEA57 /* UserLocalAdapterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C322AE1731100FDEA57 /* UserLocalAdapterProtocol.swift */; };
+		4A8B6C372AE1925100FDEA57 /* BuyCurrencyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C362AE1925100FDEA57 /* BuyCurrencyUseCase.swift */; };
+		4A8B6C392AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C382AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift */; };
+		4A8B6C7A2AE294E000FDEA57 /* GetCurrencyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C792AE294E000FDEA57 /* GetCurrencyRequest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A3791AC2ADD24DE0057FAE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A3791972ADD24DE0057FAE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A37919F2ADD24DE0057FAE6;
+			remoteInfo = WalletModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A3791A02ADD24DE0057FAE6 /* WalletModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A3791A32ADD24DE0057FAE6 /* WalletModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletModule.h; sourceTree = "<group>"; };
+		4A3791AA2ADD24DE0057FAE6 /* WalletModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A3791AF2ADD24DE0057FAE6 /* WalletModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModuleTests.swift; sourceTree = "<group>"; };
+		4A3791BF2ADD25130057FAE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4A3791C12ADD252A0057FAE6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		4A3791C52ADD266F0057FAE6 /* UserInformationHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationHeaderView.swift; sourceTree = "<group>"; };
+		4A3791C82ADD2C160057FAE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A3791CA2ADD2C250057FAE6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		4A3791CC2ADD57610057FAE6 /* CurrencyRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRowView.swift; sourceTree = "<group>"; };
+		4A3791CE2ADD5D360057FAE6 /* CurrencyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListView.swift; sourceTree = "<group>"; };
+		4A3791D12ADD5DFC0057FAE6 /* RoundedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonView.swift; sourceTree = "<group>"; };
+		4A3791E52ADD77E80057FAE6 /* BuyCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyView.swift; sourceTree = "<group>"; };
+		4A3791F72ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyViewModel.swift; sourceTree = "<group>"; };
+		4A8B6BA62ADE698400FDEA57 /* Bundle+WalletModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+WalletModule.swift"; sourceTree = "<group>"; };
+		4A8B6BA92ADE6B0900FDEA57 /* LocalizedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedKeys.swift; sourceTree = "<group>"; };
+		4A8B6BAB2ADE6B8C00FDEA57 /* LocalizedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedText.swift; sourceTree = "<group>"; };
+		4A8B6BAD2ADE740800FDEA57 /* TitledCurrencyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledCurrencyTextField.swift; sourceTree = "<group>"; };
+		4A8B6BAF2ADE804C00FDEA57 /* CurrencyTrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTrendView.swift; sourceTree = "<group>"; };
+		4A8B6BB12ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+ModuleFormatter.swift"; sourceTree = "<group>"; };
+		4A8B6BC22ADFA5C400FDEA57 /* CommonTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTypealias.swift; sourceTree = "<group>"; };
+		4A8B6BC42ADFA5EA00FDEA57 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		4A8B6C0F2AE0313E00FDEA57 /* GetCurrenciesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrenciesUseCase.swift; sourceTree = "<group>"; };
+		4A8B6C112AE0314B00FDEA57 /* GetUserInformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserInformationUseCase.swift; sourceTree = "<group>"; };
+		4A8B6C142AE0316A00FDEA57 /* WalletRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletRepository.swift; sourceTree = "<group>"; };
+		4A8B6C1A2AE031B200FDEA57 /* CurrencyRemoteAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRemoteAdapterProtocol.swift; sourceTree = "<group>"; };
+		4A8B6C1C2AE0324000FDEA57 /* CurrencyListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListDTO.swift; sourceTree = "<group>"; };
+		4A8B6C1E2AE0324700FDEA57 /* CurrencyItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyItemDTO.swift; sourceTree = "<group>"; };
+		4A8B6C262AE03B1C00FDEA57 /* GetCurrenciesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetCurrenciesResponse.swift; path = WalletModule/Presentation/Component/WalletView/GetCurrenciesResponse.swift; sourceTree = SOURCE_ROOT; };
+		4A8B6C2C2AE1596600FDEA57 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		4A8B6C2E2AE16F9900FDEA57 /* BalanceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTextView.swift; sourceTree = "<group>"; };
+		4A8B6C302AE172B000FDEA57 /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		4A8B6C322AE1731100FDEA57 /* UserLocalAdapterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocalAdapterProtocol.swift; sourceTree = "<group>"; };
+		4A8B6C362AE1925100FDEA57 /* BuyCurrencyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyUseCase.swift; sourceTree = "<group>"; };
+		4A8B6C382AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendTurkishLiraUseCase.swift; sourceTree = "<group>"; };
+		4A8B6C792AE294E000FDEA57 /* GetCurrencyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrencyRequest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A37919D2ADD24DE0057FAE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3791A72ADD24DE0057FAE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3791AB2ADD24DE0057FAE6 /* WalletModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A3791962ADD24DE0057FAE6 = {
+			isa = PBXGroup;
+			children = (
+				4A3791C72ADD2C080057FAE6 /* Resource */,
+				4A3791A22ADD24DE0057FAE6 /* WalletModule */,
+				4A3791AE2ADD24DE0057FAE6 /* WalletModuleTests */,
+				4A3791A12ADD24DE0057FAE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A3791A12ADD24DE0057FAE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791A02ADD24DE0057FAE6 /* WalletModule.framework */,
+				4A3791AA2ADD24DE0057FAE6 /* WalletModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A3791A22ADD24DE0057FAE6 /* WalletModule */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6BA42ADE696700FDEA57 /* Utilities */,
+				4A3791BC2ADD24F30057FAE6 /* Data */,
+				4A3791BB2ADD24ED0057FAE6 /* Domain */,
+				4A3791BA2ADD24E70057FAE6 /* Presentation */,
+				4A3791A32ADD24DE0057FAE6 /* WalletModule.h */,
+			);
+			path = WalletModule;
+			sourceTree = "<group>";
+		};
+		4A3791AE2ADD24DE0057FAE6 /* WalletModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791AF2ADD24DE0057FAE6 /* WalletModuleTests.swift */,
+			);
+			path = WalletModuleTests;
+			sourceTree = "<group>";
+		};
+		4A3791BA2ADD24E70057FAE6 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791C42ADD26400057FAE6 /* Component */,
+				4A3791C32ADD26300057FAE6 /* Scene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		4A3791BB2ADD24ED0057FAE6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C242AE03B0B00FDEA57 /* Model */,
+				4A8B6C0D2AE0312900FDEA57 /* Usecase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		4A3791BC2ADD24F30057FAE6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C192AE0318F00FDEA57 /* Adapter */,
+				4A8B6C162AE0316C00FDEA57 /* DTO */,
+				4A8B6C142AE0316A00FDEA57 /* WalletRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4A3791BD2ADD24F80057FAE6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791BF2ADD25130057FAE6 /* HomeView.swift */,
+				4A3791C12ADD252A0057FAE6 /* HomeViewModel.swift */,
+				4A8B6BC42ADFA5EA00FDEA57 /* HomeRoute.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4A3791BE2ADD24FB0057FAE6 /* BuyCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791E52ADD77E80057FAE6 /* BuyCurrencyView.swift */,
+				4A3791F72ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift */,
+			);
+			path = BuyCurrency;
+			sourceTree = "<group>";
+		};
+		4A3791C32ADD26300057FAE6 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791BE2ADD24FB0057FAE6 /* BuyCurrency */,
+				4A3791BD2ADD24F80057FAE6 /* Home */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		4A3791C42ADD26400057FAE6 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791C52ADD266F0057FAE6 /* UserInformationHeaderView.swift */,
+				4A8B6C2C2AE1596600FDEA57 /* WalletView.swift */,
+				4A3791CC2ADD57610057FAE6 /* CurrencyRowView.swift */,
+				4A3791CE2ADD5D360057FAE6 /* CurrencyListView.swift */,
+				4A3791D12ADD5DFC0057FAE6 /* RoundedButtonView.swift */,
+				4A8B6BAB2ADE6B8C00FDEA57 /* LocalizedText.swift */,
+				4A8B6BAD2ADE740800FDEA57 /* TitledCurrencyTextField.swift */,
+				4A8B6BAF2ADE804C00FDEA57 /* CurrencyTrendView.swift */,
+				4A8B6C2E2AE16F9900FDEA57 /* BalanceTextView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		4A3791C72ADD2C080057FAE6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4A3791C82ADD2C160057FAE6 /* Assets.xcassets */,
+				4A3791CA2ADD2C250057FAE6 /* Localizable.xcstrings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4A8B6BA42ADE696700FDEA57 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6BA82ADE6AF600FDEA57 /* Enum */,
+				4A8B6BA52ADE697900FDEA57 /* Extension */,
+				4A8B6BC22ADFA5C400FDEA57 /* CommonTypealias.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4A8B6BA52ADE697900FDEA57 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6BA62ADE698400FDEA57 /* Bundle+WalletModule.swift */,
+				4A8B6BB12ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4A8B6BA82ADE6AF600FDEA57 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6BA92ADE6B0900FDEA57 /* LocalizedKeys.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		4A8B6C0D2AE0312900FDEA57 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C0F2AE0313E00FDEA57 /* GetCurrenciesUseCase.swift */,
+				4A8B6C112AE0314B00FDEA57 /* GetUserInformationUseCase.swift */,
+				4A8B6C362AE1925100FDEA57 /* BuyCurrencyUseCase.swift */,
+				4A8B6C382AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		4A8B6C162AE0316C00FDEA57 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C182AE0318100FDEA57 /* GetUser */,
+				4A8B6C172AE0317000FDEA57 /* GetCurrency */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		4A8B6C172AE0317000FDEA57 /* GetCurrency */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C782AE294D700FDEA57 /* Request */,
+				4A8B6C202AE0325100FDEA57 /* Response */,
+			);
+			path = GetCurrency;
+			sourceTree = "<group>";
+		};
+		4A8B6C182AE0318100FDEA57 /* GetUser */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C302AE172B000FDEA57 /* UserDTO.swift */,
+			);
+			path = GetUser;
+			sourceTree = "<group>";
+		};
+		4A8B6C192AE0318F00FDEA57 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C1A2AE031B200FDEA57 /* CurrencyRemoteAdapterProtocol.swift */,
+				4A8B6C322AE1731100FDEA57 /* UserLocalAdapterProtocol.swift */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		4A8B6C202AE0325100FDEA57 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C1C2AE0324000FDEA57 /* CurrencyListDTO.swift */,
+				4A8B6C1E2AE0324700FDEA57 /* CurrencyItemDTO.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		4A8B6C242AE03B0B00FDEA57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C252AE03B1000FDEA57 /* GetCurrencies */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A8B6C252AE03B1000FDEA57 /* GetCurrencies */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C262AE03B1C00FDEA57 /* GetCurrenciesResponse.swift */,
+			);
+			path = GetCurrencies;
+			sourceTree = "<group>";
+		};
+		4A8B6C782AE294D700FDEA57 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				4A8B6C792AE294E000FDEA57 /* GetCurrencyRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4A37919B2ADD24DE0057FAE6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3791B12ADD24DE0057FAE6 /* WalletModule.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4A37919F2ADD24DE0057FAE6 /* WalletModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A3791B42ADD24DE0057FAE6 /* Build configuration list for PBXNativeTarget "WalletModule" */;
+			buildPhases = (
+				4A37919B2ADD24DE0057FAE6 /* Headers */,
+				4A37919C2ADD24DE0057FAE6 /* Sources */,
+				4A37919D2ADD24DE0057FAE6 /* Frameworks */,
+				4A37919E2ADD24DE0057FAE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WalletModule;
+			productName = WalletModule;
+			productReference = 4A3791A02ADD24DE0057FAE6 /* WalletModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		4A3791A92ADD24DE0057FAE6 /* WalletModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A3791B72ADD24DE0057FAE6 /* Build configuration list for PBXNativeTarget "WalletModuleTests" */;
+			buildPhases = (
+				4A3791A62ADD24DE0057FAE6 /* Sources */,
+				4A3791A72ADD24DE0057FAE6 /* Frameworks */,
+				4A3791A82ADD24DE0057FAE6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A3791AD2ADD24DE0057FAE6 /* PBXTargetDependency */,
+			);
+			name = WalletModuleTests;
+			productName = WalletModuleTests;
+			productReference = 4A3791AA2ADD24DE0057FAE6 /* WalletModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A3791972ADD24DE0057FAE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4A37919F2ADD24DE0057FAE6 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					4A3791A92ADD24DE0057FAE6 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 4A37919A2ADD24DE0057FAE6 /* Build configuration list for PBXProject "WalletModule" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				tr,
+			);
+			mainGroup = 4A3791962ADD24DE0057FAE6;
+			productRefGroup = 4A3791A12ADD24DE0057FAE6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A37919F2ADD24DE0057FAE6 /* WalletModule */,
+				4A3791A92ADD24DE0057FAE6 /* WalletModuleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A37919E2ADD24DE0057FAE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3791CB2ADD2C250057FAE6 /* Localizable.xcstrings in Resources */,
+				4A3791C92ADD2C160057FAE6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3791A82ADD24DE0057FAE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A37919C2ADD24DE0057FAE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3791D22ADD5DFC0057FAE6 /* RoundedButtonView.swift in Sources */,
+				4A8B6BAC2ADE6B8C00FDEA57 /* LocalizedText.swift in Sources */,
+				4A8B6BC52ADFA5EA00FDEA57 /* HomeRoute.swift in Sources */,
+				4A3791C22ADD252A0057FAE6 /* HomeViewModel.swift in Sources */,
+				4A8B6BAE2ADE740800FDEA57 /* TitledCurrencyTextField.swift in Sources */,
+				4A8B6C152AE0316A00FDEA57 /* WalletRepository.swift in Sources */,
+				4A8B6C332AE1731100FDEA57 /* UserLocalAdapterProtocol.swift in Sources */,
+				4A8B6BB22ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift in Sources */,
+				4A3791C02ADD25130057FAE6 /* HomeView.swift in Sources */,
+				4A3791CD2ADD57610057FAE6 /* CurrencyRowView.swift in Sources */,
+				4A8B6BB02ADE804C00FDEA57 /* CurrencyTrendView.swift in Sources */,
+				4A8B6C2F2AE16F9900FDEA57 /* BalanceTextView.swift in Sources */,
+				4A8B6BAA2ADE6B0900FDEA57 /* LocalizedKeys.swift in Sources */,
+				4A3791CF2ADD5D360057FAE6 /* CurrencyListView.swift in Sources */,
+				4A8B6BC32ADFA5C400FDEA57 /* CommonTypealias.swift in Sources */,
+				4A8B6C1D2AE0324000FDEA57 /* CurrencyListDTO.swift in Sources */,
+				4A8B6C312AE172B000FDEA57 /* UserDTO.swift in Sources */,
+				4A8B6BA72ADE698400FDEA57 /* Bundle+WalletModule.swift in Sources */,
+				4A3791E62ADD77E80057FAE6 /* BuyCurrencyView.swift in Sources */,
+				4A8B6C7A2AE294E000FDEA57 /* GetCurrencyRequest.swift in Sources */,
+				4A8B6C272AE03B1C00FDEA57 /* GetCurrenciesResponse.swift in Sources */,
+				4A8B6C102AE0313E00FDEA57 /* GetCurrenciesUseCase.swift in Sources */,
+				4A3791F82ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift in Sources */,
+				4A3791C62ADD266F0057FAE6 /* UserInformationHeaderView.swift in Sources */,
+				4A8B6C1B2AE031B200FDEA57 /* CurrencyRemoteAdapterProtocol.swift in Sources */,
+				4A8B6C392AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift in Sources */,
+				4A8B6C2D2AE1596600FDEA57 /* WalletView.swift in Sources */,
+				4A8B6C372AE1925100FDEA57 /* BuyCurrencyUseCase.swift in Sources */,
+				4A8B6C122AE0314B00FDEA57 /* GetUserInformationUseCase.swift in Sources */,
+				4A8B6C1F2AE0324700FDEA57 /* CurrencyItemDTO.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A3791A62ADD24DE0057FAE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3791B02ADD24DE0057FAE6 /* WalletModuleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A3791AD2ADD24DE0057FAE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A37919F2ADD24DE0057FAE6 /* WalletModule */;
+			targetProxy = 4A3791AC2ADD24DE0057FAE6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4A3791B22ADD24DE0057FAE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4A3791B32ADD24DE0057FAE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4A3791B52ADD24DE0057FAE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K42P7PK4NT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salihcankahya.WalletModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4A3791B62ADD24DE0057FAE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K42P7PK4NT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.salihcankahya.WalletModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		4A3791B82ADD24DE0057FAE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K42P7PK4NT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salihcankahya.WalletModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A3791B92ADD24DE0057FAE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K42P7PK4NT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salihcankahya.WalletModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A37919A2ADD24DE0057FAE6 /* Build configuration list for PBXProject "WalletModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A3791B22ADD24DE0057FAE6 /* Debug */,
+				4A3791B32ADD24DE0057FAE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A3791B42ADD24DE0057FAE6 /* Build configuration list for PBXNativeTarget "WalletModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A3791B52ADD24DE0057FAE6 /* Debug */,
+				4A3791B62ADD24DE0057FAE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A3791B72ADD24DE0057FAE6 /* Build configuration list for PBXNativeTarget "WalletModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A3791B82ADD24DE0057FAE6 /* Debug */,
+				4A3791B92ADD24DE0057FAE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A3791972ADD24DE0057FAE6 /* Project object */;
+}
