@@ -62,5 +62,8 @@ public struct GetTransactionsUseCase: GetTransactionsUseCaseProtocol {
                 )
             }
             .compactMap { $0 }
+            .sorted { first, second in
+                first.date > second.date
+            }
     }
 }
