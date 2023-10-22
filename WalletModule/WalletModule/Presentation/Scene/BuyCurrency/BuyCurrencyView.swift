@@ -42,19 +42,21 @@ public struct BuyCurrencyView: View {
                             titleKey: .currencyAmountWouldLikeToBuyTitle(
                                 viewModel.getLocalizedCurrencyName()
                             ), currencySign: viewModel.currency.information.sign.value,
+                            formatter: viewModel.currencyTextFieldFormatter,
                             input: $viewModel.currencyAmount,
                             focusState: _currencyFocused)
                         
                         TitledCurrencyTextField(
                             titleKey: .totalAmountOfCurrencyAsTL,
                             currencySign: "₺",
+                            formatter: viewModel.currencyTextFieldFormatter,
                             input: $viewModel.liraAmount,
                             focusState: _liraFocused)
                         
                         RoundedButtonView(title: .buy, action: {
-                            viewModel.buyCurrency()
                             liraFocused = false
                             currencyFocused = false
+                            viewModel.buyCurrency()
                         }, disableProvider: {
                             viewModel.isTryingToBuy
                         })
@@ -99,6 +101,7 @@ public struct BuyCurrencyView: View {
             .background(.clSecondary.opacity(0.75))
             .cornerRadius(12)
             .transition(.move(edge: .bottom).combined(with: .opacity))
+            .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 

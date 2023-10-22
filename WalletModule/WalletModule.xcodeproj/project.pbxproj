@@ -42,6 +42,7 @@
 		4A8B6C372AE1925100FDEA57 /* BuyCurrencyUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C362AE1925100FDEA57 /* BuyCurrencyUseCase.swift */; };
 		4A8B6C392AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C382AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift */; };
 		4A8B6C7A2AE294E000FDEA57 /* GetCurrencyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A8B6C792AE294E000FDEA57 /* GetCurrencyRequest.swift */; };
+		4ACA066E2AE5467900C625C3 /* TitledCurrencyTextFieldFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA066D2AE5467900C625C3 /* TitledCurrencyTextFieldFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		4A8B6C362AE1925100FDEA57 /* BuyCurrencyUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyUseCase.swift; sourceTree = "<group>"; };
 		4A8B6C382AE1A23700FDEA57 /* AppendTurkishLiraUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppendTurkishLiraUseCase.swift; sourceTree = "<group>"; };
 		4A8B6C792AE294E000FDEA57 /* GetCurrencyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrencyRequest.swift; sourceTree = "<group>"; };
+		4ACA066D2AE5467900C625C3 /* TitledCurrencyTextFieldFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitledCurrencyTextFieldFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				4A3791E52ADD77E80057FAE6 /* BuyCurrencyView.swift */,
 				4A3791F72ADD7F6B0057FAE6 /* BuyCurrencyViewModel.swift */,
+				4ACA066D2AE5467900C625C3 /* TitledCurrencyTextFieldFormatter.swift */,
 			);
 			path = BuyCurrency;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				4A8B6BC52ADFA5EA00FDEA57 /* HomeRoute.swift in Sources */,
 				4A3791C22ADD252A0057FAE6 /* HomeViewModel.swift in Sources */,
 				4A8B6BAE2ADE740800FDEA57 /* TitledCurrencyTextField.swift in Sources */,
+				4ACA066E2AE5467900C625C3 /* TitledCurrencyTextFieldFormatter.swift in Sources */,
 				4A8B6C152AE0316A00FDEA57 /* WalletRepository.swift in Sources */,
 				4A8B6C332AE1731100FDEA57 /* UserLocalAdapterProtocol.swift in Sources */,
 				4A8B6BB22ADE961A00FDEA57 /* NumberFormatter+ModuleFormatter.swift in Sources */,

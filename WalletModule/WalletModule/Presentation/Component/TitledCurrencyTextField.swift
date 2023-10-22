@@ -7,13 +7,19 @@
 
 import SwiftUI
 
+protocol TitledCurrencyTextFieldFormatterProtocol {
+    func formatInput(with newValue: String, and oldValue: String, isFocused: Bool) -> String
+}
+
 struct TitledCurrencyTextField: View {
     let titleKey: LocalizedKeys
     let currencySign: String
+    let formatter: TitledCurrencyTextFieldFormatterProtocol
+    
     @Binding var input: String
-    @FocusState var focusState: Bool
-    private let maxCharacter = 12
     private let placeHolder = "0,00"
+    @FocusState var focusState: Bool
+
     var body: some View {
         VStack(alignment: .leading) {
             LocalizedText(key: titleKey)
@@ -45,90 +51,10 @@ struct TitledCurrencyTextField: View {
     }
     
     func formatInput(with newValue: String, and oldValue: String) {
-        
-        let isBackSpace = newValue.count < oldValue.count
-        var maxChars = maxCharacter
-        
-        var input = newValue.filter { "0123456789,".contains($0) }
-        
-        if  input.last == "," &&
-                input.filter({ ",".contains($0) }).count > 1 {
-            input.removeLast()
-            return
-        }
-        
-        if input.count == 1 &&  input.last == "0" {
-            input.removeLast()
-        }
-        
-        var components = input.split(separator: ",")
-        let componentCount = components.count
-        
-        guard componentCount <= 2 else {
-            input = ""
-            return
-        }
-        
-        var itHasTwoDigitAndEndWithZero: Bool = false
-        var itHasOneDigitAndEndWithZero: Bool = false
-        var itHasTwoDigitAndAllWithZero: Bool = false
-        if componentCount == 2 {
-            if components[1].count > 2 {
-                components[1].removeLast()
-                input.removeLast()
-            }
-            
-            if components[1].count == 2 {
-                itHasTwoDigitAndEndWithZero = components[1].last == "0"
-                itHasTwoDigitAndAllWithZero = itHasTwoDigitAndEndWithZero && components[1].first == "0"
-                
-            } else if components[1].count == 1 {
-                itHasOneDigitAndEndWithZero = components[1].last == "0"
-            }
-            
-            maxChars += components[1].count
-        }
-        
-        if input.count > maxChars && focusState && !isBackSpace {
-            input.removeLast()
-        }
-        
-        var valueStr = input
-        
-        let isNeedsToRemoveLastComma = valueStr.last == ","
-        
-        if isNeedsToRemoveLastComma {
-            valueStr.removeLast()
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = "."
-        formatter.decimalSeparator = ","
-        formatter.maximumFractionDigits = 2
-        
-        guard let number = formatter.number(from: valueStr) else {
-            return
-        }
-        
-        guard var formattedString = formatter.string(from: number) else {
-            return
-        }
-        
-        if isNeedsToRemoveLastComma {
-            formattedString.append(",")
-        } else if itHasOneDigitAndEndWithZero {
-            formattedString.append(",0")
-        } else if itHasTwoDigitAndAllWithZero {
-            formattedString.append(",00")
-        } else if itHasTwoDigitAndEndWithZero {
-            formattedString.append("0")
-        }
-        
-        self.input = formattedString
+        self.input = formatter.formatInput(with: newValue, and: oldValue, isFocused: focusState)
     }
 }
 
 #Preview {
-    TitledCurrencyTextField(titleKey: .currencyAmountWouldLikeToBuyTitle("test"), currencySign: "₺", input: .constant(""), focusState: .init())
+    TitledCurrencyTextField(titleKey: .currencyAmountWouldLikeToBuyTitle("test"), currencySign: "₺", formatter: TitledCurrencyTextFieldFormatter(), input: .constant(""), focusState: .init())
 }

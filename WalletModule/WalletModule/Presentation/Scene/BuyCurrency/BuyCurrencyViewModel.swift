@@ -21,10 +21,12 @@ public final class BuyCurrencyViewModel: ObservableObject {
     @Published var errorString: LocalizedKeys? = nil
     @Published var dismissView: Bool = false
     @Published var isTryingToBuy: Bool = false
+    var currencyTextFieldFormatter: TitledCurrencyTextFieldFormatterProtocol
     
     public init(currency: Currency, buyCurrencyUseCase: BuyCurrencyUseCaseProtocol) {
         self.currency = currency
         self.buyCurrencyUseCase = buyCurrencyUseCase
+        self.currencyTextFieldFormatter = TitledCurrencyTextFieldFormatter()
         bindAmounts()
     }
     
@@ -103,11 +105,13 @@ public final class BuyCurrencyViewModel: ObservableObject {
                     .generalError
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self?.errorString = nil
+                withAnimation {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self?.errorString = nil
+                    }
+                   
+                    self?.isTryingToBuy = false
                 }
-                
-                self?.isTryingToBuy = false
             }
         }
     }
