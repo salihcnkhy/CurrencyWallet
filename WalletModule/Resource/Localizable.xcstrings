@@ -187,6 +187,23 @@
         }
       }
     },
+    "general_error" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorry, An unowned error occurred. Try again later!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üzgünüz, bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz!"
+          }
+        }
+      }
+    },
     "greeting %@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -200,6 +217,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Merhaba, %@!"
+          }
+        }
+      }
+    },
+    "not_enought_lira" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lira balance is not enough."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TL bakiyeniz yetersiz."
           }
         }
       }
@@ -284,6 +318,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cüzdan ID: %@"
+          }
+        }
+      }
+    },
+    "you_dont_have_wallet" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "There is no available wallet."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygun cüzdanınız bulunmamaktadır."
           }
         }
       }

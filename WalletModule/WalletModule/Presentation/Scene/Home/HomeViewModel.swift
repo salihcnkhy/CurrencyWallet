@@ -37,7 +37,14 @@ public enum CurrencyType: CaseIterable {
     }
 }
 
-struct CurrencyPropertyFactory {
+public struct CurrencyPropertyFactory {
+    
+    public init() { }
+    
+    public func createAll() -> [CurrencyInformation] {
+        CurrencyType.allCases.map { create(with: $0) }
+    }
+    
     func create(with type: CurrencyType) -> CurrencyInformation {
         switch type {
         case .tl:

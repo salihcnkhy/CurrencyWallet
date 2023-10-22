@@ -14,10 +14,11 @@ public final class BuyCurrencyViewModel: ObservableObject {
     private let buyCurrencyUseCase: BuyCurrencyUseCaseProtocol
     private var anyCancellables = Set<AnyCancellable>()
     private var focusedTextField: FocusedTextField? = nil
-
+    
     @Published var liraAmount: String = ""
     @Published var currencyAmount: String = ""
     @Published var isCompleted: Bool = false
+    @Published var errorString: LocalizedKeys? = nil
     @Published var dismissView: Bool = false
     @Published var isTryingToBuy: Bool = false
     
@@ -31,7 +32,7 @@ public final class BuyCurrencyViewModel: ObservableObject {
         $liraAmount.sink { [weak self] value in
             guard let self else { return }
             guard let focusedTextField, focusedTextField == .lira else { return }
-
+            
             guard !value.isEmpty else {
                 self.currencyAmount = ""
                 return
@@ -81,13 +82,32 @@ public final class BuyCurrencyViewModel: ObservableObject {
         guard let liraAmount = NumberFormatter.moduleFormatter.number(from: liraAmount)?.doubleValue else { return }
         guard let currencyAmount = NumberFormatter.moduleFormatter.number(from: currencyAmount)?.doubleValue else { return }
         isTryingToBuy = true
-        buyCurrencyUseCase.execute(curencyAmount: currencyAmount, liraAmount: liraAmount, for: currency.information.code) { [weak self] in
-            withAnimation {
-                self?.isCompleted = true
-            }
+        buyCurrencyUseCase.execute(curencyAmount: currencyAmount, liraAmount: liraAmount, for: currency.information.code) { [weak self] result in
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self?.dismissView = true
+            switch result {
+            case .success(_):
+                withAnimation {
+                    self?.isCompleted = true
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self?.dismissView = true
+                }
+            case .failure(let error):
+                self?.errorString = switch error {
+                case .walletNotFound:
+                    .addMoney
+                case .walletBalanceNotEnough:
+                    .notEnoughLiraBalance
+                case .unknown:
+                    .generalError
+                }
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self?.errorString = nil
+                }
+                
+                self?.isTryingToBuy = false
             }
         }
     }

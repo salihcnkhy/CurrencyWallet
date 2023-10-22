@@ -20,6 +20,9 @@ enum LocalizedKeys {
     case updateTime(String)
     case transactionCompleted
     case copyDone
+    case notEnoughLiraBalance
+    case noAvailableWallet
+    case generalError
     
     var localized: LocalizedStringKey {
         switch self {
@@ -47,6 +50,12 @@ enum LocalizedKeys {
             "transaction_completed"
         case .copyDone:
             "copy_done"
+        case .notEnoughLiraBalance:
+            "not_enought_lira"
+        case .noAvailableWallet:
+            "you_dont_have_wallet"
+        case .generalError:
+            "general_error"
         }
     }
 }

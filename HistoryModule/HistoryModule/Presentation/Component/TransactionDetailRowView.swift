@@ -47,7 +47,7 @@ struct TransactionDetailRowView: View {
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         
-        let formattedAmount = formatter.string(from: NSNumber(value: transaction.amount)) ?? ""
+        let formattedAmount = formatter.string(from: NSNumber(value: amount)) ?? ""
         var balanceWithSign = formattedAmount
         balanceWithSign.insert(contentsOf: sign.value, at: sign.position == .left ? formattedAmount.startIndex: formattedAmount.endIndex)
         

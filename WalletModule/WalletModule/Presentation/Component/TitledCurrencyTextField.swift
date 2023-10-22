@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TitledCurrencyTextField: View {
     let titleKey: LocalizedKeys
+    let currencySign: String
     @Binding var input: String
     @FocusState var focusState: Bool
     private let maxCharacter = 12
@@ -24,8 +25,10 @@ struct TitledCurrencyTextField: View {
                     .keyboardType(.decimalPad)
                     .multilineTextAlignment(.center)
                     .focused($focusState)
-                Image(.icFlagChina)
-                    .resizable()
+                
+                Text(currencySign)
+                    .font(.title)
+                    .foregroundStyle(.clSecondary)
                     .frame(width: 20, height: 20)
             }
             
@@ -36,7 +39,6 @@ struct TitledCurrencyTextField: View {
                     .stroke(.gray, lineWidth: 1)
             )
             .onChange(of: input) { [input] newValue in
-                print(newValue, input)
                 formatInput(with: newValue, and: input)
             }
         }
@@ -128,5 +130,5 @@ struct TitledCurrencyTextField: View {
 }
 
 #Preview {
-    TitledCurrencyTextField(titleKey: .currencyAmountWouldLikeToBuyTitle("test"), input: .constant(""), focusState: .init())
+    TitledCurrencyTextField(titleKey: .currencyAmountWouldLikeToBuyTitle("test"), currencySign: "₺", input: .constant(""), focusState: .init())
 }

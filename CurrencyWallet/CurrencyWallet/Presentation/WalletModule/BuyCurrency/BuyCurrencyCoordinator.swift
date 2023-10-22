@@ -20,7 +20,7 @@ final class BuyCurrencyCoordinator: Coordinator<BuyCurrencyViewModel>, UISheetPr
             }))
     }
     
-    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         dismiss()
     }
 }

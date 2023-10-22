@@ -8,9 +8,15 @@
 import Foundation
 import WalletModule
 
+
+enum UserLocalDataSourceError: Error {
+    case userNotFound
+    case liraAmountIsNotEnough
+}
+
 protocol UserLocalDataSourceProtocol {
     func appendVirtualWalletBalance(_ balance: Double, for id: String, completion: @escaping (VirtualWalletObject) -> Void)
-    func buyCurrencyBalance(_ balance: Double, liraAmount: Double, for id: String, completion: @escaping (VirtualWalletObject, VirtualWalletObject) -> Void)
+    func buyCurrencyBalance(_ balance: Double, liraAmount: Double, for id: String, completion: @escaping (Result<(VirtualWalletObject, VirtualWalletObject), UserLocalDataSourceError>) -> Void)
     func getUser() -> UserDTO?
     func createUser(with user: UserDTO, completion: @escaping () -> Void)
 }
@@ -33,13 +39,14 @@ final class UserLocalDataSourceManager: UserLocalDataSourceProtocol {
         })
     }
     
-    func buyCurrencyBalance(_ balance: Double, liraAmount: Double, for currencyCode: String, completion: @escaping (VirtualWalletObject, VirtualWalletObject) -> Void) {
+    func buyCurrencyBalance(_ balance: Double, liraAmount: Double, for currencyCode: String, completion: @escaping (Result<(VirtualWalletObject, VirtualWalletObject), UserLocalDataSourceError>) -> Void) {
         guard let virtualWalletObject = realmManager.read(ofType: VirtualWalletObject.self, keyType: currencyCode) else { return }
         guard let tryWalletObject = realmManager.read(ofType: VirtualWalletObject.self, keyType: "TRY") else { return }
         
         let tryBalance = tryWalletObject.balance
         guard liraAmount <= tryBalance else {
             // TODO: Bu kontrolü buraya koydum şimdilik ama BuyCurrencyUseCase'e koyulması gerekiyor.
+            completion(.failure(.liraAmountIsNotEnough))
             return
         }
         
@@ -51,7 +58,7 @@ final class UserLocalDataSourceManager: UserLocalDataSourceProtocol {
             guard let self else { return }
             guard isSuccess else { return }
             self.createTransactionRecord(currencyAmount: balance, liraAmount: liraAmount, currencyCode: currencyCode, type: "buy") {
-                completion(virtualWalletObject, tryWalletObject)
+                completion(.success((virtualWalletObject, tryWalletObject)))
             }
         })
     }

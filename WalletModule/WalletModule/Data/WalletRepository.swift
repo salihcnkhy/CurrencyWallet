@@ -30,7 +30,7 @@ public final class WalletRepository {
             .eraseToAnyPublisher()
     }
     
-    func buyCurrency(currencyAmount: Double, liraAmount: Double, wallet id: String, completion: @escaping () -> Void) {
+    func buyCurrency(currencyAmount: Double, liraAmount: Double, wallet id: String, completion: @escaping (UserLocalAdapterError?) -> Void) {
         userLocalDataSource.buyCurrency(currencyAmount: currencyAmount, liraAmount: liraAmount, for: id, completion: completion)
     }
     

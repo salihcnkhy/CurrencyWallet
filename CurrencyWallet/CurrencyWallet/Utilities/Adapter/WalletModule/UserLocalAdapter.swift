@@ -9,7 +9,7 @@ import WalletModule
 import Combine
 
 struct UserLocalAdapter: UserLocalAdapterProtocol {
-    
+
     private let walletUpdateSubject = PassthroughSubject<VirtualWalletDTO, Never>()
     private let userLocalDataSource: UserLocalDataSourceProtocol
     
@@ -21,13 +21,11 @@ struct UserLocalAdapter: UserLocalAdapterProtocol {
         if let user = userLocalDataSource.getUser() {
             completion(user)
         } else {
-            let virtualWallets: [VirtualWalletDTO] = [
-                .init(id: String.getUniqueInt(), currencyCode: "TRY", balance: 0),
-                .init(id: String.getUniqueInt(), currencyCode: "USD", balance: 0),
-                .init(id: String.getUniqueInt(), currencyCode: "EUR", balance: 0),
-                .init(id: String.getUniqueInt(), currencyCode: "GBP", balance: 0),
-                .init(id: String.getUniqueInt(), currencyCode: "CAD", balance: 0),
-            ]
+            
+            let virtualWallets: [VirtualWalletDTO] = CurrencyPropertyFactory().createAll()
+                .map {
+                    VirtualWalletDTO(id: String.getUniqueInt(), currencyCode: $0.code, balance: 0)
+                }
             
             let userDto = UserDTO(fullName: "Salihcan Kahya", wallets: virtualWallets)
             userLocalDataSource.createUser(with: userDto, completion: {
@@ -50,11 +48,22 @@ struct UserLocalAdapter: UserLocalAdapterProtocol {
             .eraseToAnyPublisher()
     }
     
-    func buyCurrency(currencyAmount: Double, liraAmount: Double, for currencyCode: String, completion: @escaping () -> Void) {
-        userLocalDataSource.buyCurrencyBalance(currencyAmount, liraAmount: liraAmount, for: currencyCode, completion: { otherWallet, tryWallet in
-            self.walletUpdateSubject.send(.init(id: otherWallet.id, currencyCode: otherWallet.currencyCode, balance: otherWallet.balance))
-            self.walletUpdateSubject.send(.init(id: tryWallet.id, currencyCode: tryWallet.currencyCode, balance: tryWallet.balance))
-            completion()
+    func buyCurrency(currencyAmount: Double, liraAmount: Double, for currencyCode: String, completion: @escaping (UserLocalAdapterError?) -> Void) {
+        userLocalDataSource.buyCurrencyBalance(currencyAmount, liraAmount: liraAmount, for: currencyCode, completion: { result in
+            switch result {
+            case .success(let (otherWallet, tryWallet)):
+                self.walletUpdateSubject.send(.init(id: otherWallet.id, currencyCode: otherWallet.currencyCode, balance: otherWallet.balance))
+                self.walletUpdateSubject.send(.init(id: tryWallet.id, currencyCode: tryWallet.currencyCode, balance: tryWallet.balance))
+                completion(nil)
+            case .failure(let error):
+                switch error {
+                case .userNotFound:
+                    completion(.userNotFound)
+                case .liraAmountIsNotEnough:
+                    completion(.walletBalanceNotEnough)
+                }
+                break
+            }
         })
     }
     

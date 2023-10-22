@@ -41,12 +41,13 @@ public struct BuyCurrencyView: View {
                         TitledCurrencyTextField(
                             titleKey: .currencyAmountWouldLikeToBuyTitle(
                                 viewModel.getLocalizedCurrencyName()
-                            ),
+                            ), currencySign: viewModel.currency.information.sign.value,
                             input: $viewModel.currencyAmount,
                             focusState: _currencyFocused)
                         
                         TitledCurrencyTextField(
                             titleKey: .totalAmountOfCurrencyAsTL,
+                            currencySign: "₺",
                             input: $viewModel.liraAmount,
                             focusState: _liraFocused)
                         
@@ -76,21 +77,28 @@ public struct BuyCurrencyView: View {
             }
             
             if viewModel.isCompleted {
-                LocalizedText(key: .transactionCompleted)
-                    .font(.body)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(width: 200)
-                    .frame(height: 200)
-                    .background(.clSecondary.opacity(0.75))
-                    .cornerRadius(12)
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                createInfoBox(.transactionCompleted)
+            } else if let errorKey = viewModel.errorString {
+                createInfoBox(errorKey)
             }
         }
         .padding(.horizontal)
         .background(.clBackground)
         .navigationBarHidden(true)
+    }
+    
+    @ViewBuilder
+    private func createInfoBox(_ bodyKey: LocalizedKeys) -> some View {
+        LocalizedText(key: bodyKey)
+            .font(.body)
+            .multilineTextAlignment(.center)
+            .foregroundColor(.white)
+            .padding()
+            .frame(width: 200)
+            .frame(height: 200)
+            .background(.clSecondary.opacity(0.75))
+            .cornerRadius(12)
+            .transition(.move(edge: .bottom).combined(with: .opacity))
     }
 }
 
